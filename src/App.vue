@@ -10,18 +10,9 @@ import "https://kit.fontawesome.com/f4ab973a80.js"
     <img src="https://picsum.photos/200" alt="My profile picture">
     <p>Born in 2003, I'm probably the worst programmer the world has seen since then.</p>
     <ul>
-      <li>
-        <i class="fa-solid fa-cake-candles"></i>
-        <span>12 May, 2003</span>
-      </li>
-      <li>
-        <i class="fa-solid fa-school"></i>
-        <span>Taipei Tech, Electronics</span>
-      </li>
-      <li>
-        <i class="fa-solid fa-suitcase"></i>
-        <span>Lightenform</span>
-      </li>
+      <li><i class="fa-solid fa-cake-candles"></i> 12 May, 2003</li>
+      <li><i class="fa-solid fa-school"></i> Taipei Tech, Electronic</li>
+      <li><i class="fa-solid fa-suitcase"></i> Lightenform</li>
     </ul>
 
     <h2>Projects</h2>
@@ -48,7 +39,7 @@ import "https://kit.fontawesome.com/f4ab973a80.js"
     <ul>
       <li><a href="https://www.facebook.com/chenghsuandottxt/">Facebook</a></li>
       <li><a href="https://www.instagram.com/chenghsuan.jpg/">Instagram</a></li>
-      <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Twitter</a></li>
+      <li><a href="https://is.gd/rileytwitter">Twitter</a></li>
     </ul>
   </main>
 </template>
