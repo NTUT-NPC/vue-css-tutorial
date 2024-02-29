@@ -9,14 +9,14 @@ import "https://kit.fontawesome.com/f4ab973a80.js"
     <h2>About me</h2>
     <img src="https://picsum.photos/200" alt="My profile picture">
     <p>Born in 2003, I'm probably the worst programmer the world has seen since then.</p>
-    <ul>
-      <li><i class="fa-solid fa-cake-candles"></i> 12 May, 2003</li>
-      <li><i class="fa-solid fa-school"></i> Taipei Tech, Electronic</li>
-      <li><i class="fa-solid fa-suitcase"></i> Lightenform</li>
+    <ul class="bio">
+      <li><i class="fa-solid fa-cake-candles"></i><span>12 May, 2003</span></li>
+      <li><i class="fa-solid fa-school"></i><span>Taipei Tech, Electronic</span></li>
+      <li><i class="fa-solid fa-suitcase"></i><span>Lightenform</span></li>
     </ul>
 
     <h2>Projects</h2>
-    <ul>
+    <ul class="project-list">
       <li>
         <h3>libITC</h3>
         <p>VHDL library for the 108th to 112nd ITC hardware</p>
@@ -36,13 +36,71 @@ import "https://kit.fontawesome.com/f4ab973a80.js"
     </ul>
 
     <h2>Socials</h2>
-    <ul>
-      <li><a href="https://www.facebook.com/chenghsuandottxt/">Facebook</a></li>
-      <li><a href="https://www.instagram.com/chenghsuan.jpg/">Instagram</a></li>
-      <li><a href="https://is.gd/rileytwitter">Twitter</a></li>
+    <ul class="social-list">
+      <li><a href="https://www.facebook.com/chenghsuandottxt/"><i class="fa-brands fa-facebook"></i></a></li>
+      <li><a href="https://www.instagram.com/chenghsuan.jpg/"><i class="fa-brands fa-instagram"></i></a></li>
+      <li><a href="https://is.gd/rileytwitter"><i class="fa-brands fa-twitter"></i></a></li>
     </ul>
+
+    <div style="height: 1000px"></div>
   </main>
 </template>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Rubik+Maps&display=swap');
+
+h1 {
+  font-family: 'Rubik Maps';
+  font-weight: 400;
+}
+
+p,
+li {
+  /* color: red; */
+  font-family: 'Josefin Sans';
+}
+
+.project-list {
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.project-list > li {
+  list-style-type: none;
+  width: 200px;
+  padding: 1em;
+  margin: 1em;
+  border: 1px solid black;
+}
+
+main {
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+.social-list {
+  padding-left: 0;
+  display: flex;
+  gap: 0.5em;
+  justify-content: center;
+}
+
+.social-list > li {
+  list-style-type: none;
+}
+
+.bio {
+  padding-left: 0;
+}
+
+.bio > li > i {
+  width: 40px;
+  text-align: center;
+}
+
+.bio > li > span {
+  flex-grow: 1;
+}
 </style>
