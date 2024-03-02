@@ -1,5 +1,20 @@
 <script setup>
 import "https://kit.fontawesome.com/f4ab973a80.js"
+import Comment from "@/components/Comment.vue"
+import {ref} from "vue"
+
+const comments = ref([])
+
+function getComments() {
+  fetch("http://localhost:8080/comments")
+      .then(response => response.json())
+      .then(fetchedComments => {
+        console.log("Comments:", fetchedComments)
+        comments.value = fetchedComments
+      })
+}
+
+getComments() // Fetch comments when the app starts
 </script>
 
 <template>
@@ -42,6 +57,18 @@ import "https://kit.fontawesome.com/f4ab973a80.js"
       <li><a href="https://is.gd/rileytwitter"><i class="fa-brands fa-twitter"></i></a></li>
     </ul>
 
+    <h2>Comments</h2>
+    <article v-for="comment in comments">
+      <Comment
+          :key="comment.id"
+          :author="comment.author"
+          :date="new Date(comment.created)"
+          :content="comment.content"
+      />
+      <hr>
+    </article>
+
+    <!-- Being able to scroll past the end aids the presentation -->
     <div style="height: 1000px"></div>
   </main>
 </template>
