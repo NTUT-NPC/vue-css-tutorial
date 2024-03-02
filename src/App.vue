@@ -4,6 +4,8 @@ import Comment from "@/components/Comment.vue"
 import {ref} from "vue"
 
 const comments = ref([])
+const newCommentAuthor = ref("")
+const newCommentText = ref("")
 
 function getComments() {
   fetch("http://localhost:8080/comments")
@@ -15,6 +17,30 @@ function getComments() {
 }
 
 getComments() // Fetch comments when the app starts
+
+function postComment(event) {
+  event.preventDefault() // Prevent the form from submitting
+  console.log("Adding comment:", newCommentText.value)
+
+  fetch("http://localhost:8080/comments", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      author: newCommentAuthor.value,
+      content: newCommentText.value,
+      created: new Date().toISOString(),
+    })
+  })
+
+  // Clear the new comment field
+  newCommentAuthor.value = ""
+  newCommentText.value = ""
+
+  // Fetch the comments again to update the list
+  getComments()
+}
 </script>
 
 <template>
@@ -67,6 +93,14 @@ getComments() // Fetch comments when the app starts
       />
       <hr>
     </article>
+
+    <form v-on:submit="postComment" class="new-comment">
+      <textarea v-model="newCommentText" placeholder="Add a comment..."></textarea>
+      <div class="new-comment-footer">
+        <span>By <input v-model="newCommentAuthor" type="text" placeholder="Your name"></span>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
 
     <!-- Being able to scroll past the end aids the presentation -->
     <div style="height: 1000px"></div>
@@ -128,5 +162,16 @@ main {
 
 .bio > li > span {
   flex-grow: 1;
+}
+
+.new-comment > textarea {
+  width: 100%;
+  resize: vertical;
+  margin-bottom: 0.5rem;
+}
+
+.new-comment-footer {
+  display: flex;
+  justify-content: space-between;
 }
 </style>
