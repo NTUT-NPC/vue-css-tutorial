@@ -50,14 +50,13 @@ import "https://kit.fontawesome.com/f4ab973a80.js"
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Rubik+Maps&display=swap');
 
 h1 {
-  font-family: 'Rubik Maps';
+  font-family: 'Rubik Maps', sans-serif;
   font-weight: 400;
 }
 
 p,
 li {
-  /* color: red; */
-  font-family: 'Josefin Sans';
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 .project-list {
