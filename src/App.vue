@@ -32,14 +32,14 @@ function postComment(event) {
       content: newCommentText.value,
       created: new Date().toISOString(),
     })
+  }).then(() => {
+    // Clear the new comment field
+    newCommentAuthor.value = ""
+    newCommentText.value = ""
+
+    // Fetch the comments again to update the list
+    getComments()
   })
-
-  // Clear the new comment field
-  newCommentAuthor.value = ""
-  newCommentText.value = ""
-
-  // Fetch the comments again to update the list
-  getComments()
 }
 </script>
 
