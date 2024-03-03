@@ -8,7 +8,7 @@ const newCommentAuthor = ref("")
 const newCommentText = ref("")
 
 function getComments() {
-  fetch("http://localhost:8080/comments")
+  fetch("https://vue.riley.ntut.club/comments")
       .then(response => response.json())
       .then(fetchedComments => {
         console.log("Comments:", fetchedComments)
@@ -22,7 +22,7 @@ function postComment(event) {
   event.preventDefault() // Prevent the form from submitting
   console.log("Adding comment:", newCommentText.value)
 
-  fetch("http://localhost:8080/comments", {
+  fetch("https://vue.riley.ntut.club/comments", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
