@@ -86,10 +86,10 @@ function postComment(event) {
     <h2>Comments</h2>
     <article v-for="comment in comments">
       <Comment
-          :key="comment.id"
-          :author="comment.author"
-          :date="new Date(comment.created)"
-          :content="comment.content"
+          v-bind:key="comment.id"
+          v-bind:author="comment.author"
+          v-bind:date="new Date(comment.created)"
+          v-bind:content="comment.content"
       />
       <hr>
     </article>
