@@ -9,7 +9,7 @@ defineProps({
 <template>
   <header>
     <h3 class="comment-author">{{ author }}</h3>
-    &bullet;
+    &middot;
     <time>{{ date.toLocaleString() }}</time>
   </header>
   <p>{{ content }}</p>
