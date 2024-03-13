@@ -78,7 +78,7 @@ function postComment(event) {
 
     <h2>Socials</h2>
     <ul class="social-list">
-      <li><a href="https://www.facebook.com/chenghsuandottxt/"><i class="fa-brands fa-facebook"></i></a></li>
+      <li><a href="https://www.facebook.com/rileychh/"><i class="fa-brands fa-facebook"></i></a></li>
       <li><a href="https://www.instagram.com/chenghsuan.jpg/"><i class="fa-brands fa-instagram"></i></a></li>
       <li><a href="https://is.gd/rileytwitter"><i class="fa-brands fa-twitter"></i></a></li>
     </ul>
