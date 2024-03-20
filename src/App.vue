@@ -1,5 +1,10 @@
 <script setup>
 import "https://kit.fontawesome.com/f4ab973a80.js"
+import Comment from "@/components/Comment.vue"
+
+const author = "Riley"
+const date = new Date()
+const content = "I'm the best programmer the world has seen since 2003."
 </script>
 
 <template>
@@ -37,11 +42,27 @@ import "https://kit.fontawesome.com/f4ab973a80.js"
 
     <h2>Socials</h2>
     <ul class="social-list">
-      <li><a href="https://www.facebook.com/chenghsuandottxt/"><i class="fa-brands fa-facebook"></i></a></li>
+      <li><a href="https://www.facebook.com/rileychh/"><i class="fa-brands fa-facebook"></i></a></li>
       <li><a href="https://www.instagram.com/chenghsuan.jpg/"><i class="fa-brands fa-instagram"></i></a></li>
       <li><a href="https://is.gd/rileytwitter"><i class="fa-brands fa-twitter"></i></a></li>
     </ul>
 
+    <h2>Comments</h2>
+    <Comment
+        v-bind:author="author"
+        v-bind:date="date"
+        v-bind:content="content"
+    />
+
+    <form class="new-comment">
+      <textarea placeholder="Add a comment..."></textarea>
+      <div class="new-comment-footer">
+        <span>By <input type="text" placeholder="Your name"></span>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+
+    <!-- Being able to scroll past the end aids the presentation -->
     <div style="height: 1000px"></div>
   </main>
 </template>
@@ -50,14 +71,13 @@ import "https://kit.fontawesome.com/f4ab973a80.js"
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Rubik+Maps&display=swap');
 
 h1 {
-  font-family: 'Rubik Maps';
+  font-family: 'Rubik Maps', sans-serif;
   font-weight: 400;
 }
 
 p,
 li {
-  /* color: red; */
-  font-family: 'Josefin Sans';
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 .project-list {
@@ -102,5 +122,16 @@ main {
 
 .bio > li > span {
   flex-grow: 1;
+}
+
+.new-comment > textarea {
+  width: 100%;
+  resize: vertical;
+  margin-bottom: 0.5rem;
+}
+
+.new-comment-footer {
+  display: flex;
+  justify-content: space-between;
 }
 </style>
